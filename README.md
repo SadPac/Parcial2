@@ -1,10 +1,10 @@
-#Parcial 2 - Automatización y Control de Procesos
-##Etapa de Diseño
+# Parcial 2 - Automatización y Control de Procesos
+## Etapa de Diseño
 
 Se procedió a realizar el diseño del sistema automatizado a partir de los temas vistos
 en clase, en primer lugar se estableció cada una de las variables.
 
-###Definición de Variables
+### Definición de Variables
 
 Para la realización de este sistema se establecieron las siguientes variables:
 
@@ -43,7 +43,7 @@ Para la realización de este sistema se establecieron las siguientes variables:
 | CONTADOR_VECES_SISTEMA        | INPUT    | CTU  | Contador para la cantidad de veces que se repite el proceso      |
 |                               |          |      |                                                                  |
 
-###Diagrama de Actividades
-###Programación en Ladder
-##Etapa de Desarrollo
-##Etapa de Implementación
+### Diagrama de Actividades
+### Programación en Ladder
+## Etapa de Desarrollo
+## Etapa de Implementación
