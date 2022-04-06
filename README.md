@@ -1,3 +1,10 @@
+- [Etapa de Diseño](#etapadediseño)
+    - [Definición de Variables](#definiciondevariables)
+    - [Diagrama de Actividades](#diagramadeactividades)
+    - [Programación en Ladder](#programacionenladder)
+- [Etapa de Desarrollo e Implementación](#etapadesarrolloeimplementacion)
+
+
 # Etapa de Diseño
 
 Se procedió a realizar el diseño del sistema automatizado a partir de los temas vistos
@@ -43,8 +50,18 @@ Para la realización de este sistema se establecieron las siguientes variables:
 |                               |          |      |                                                                  |
 
 ## Diagrama de Actividades
-
-![This is an image](https://raw.githubusercontent.com/SadPac/Parcial2/main/Diagrama.png)
+<p align="center">
+  <img width="139" height="600" src="https://raw.githubusercontent.com/SadPac/Parcial2/main/Diagrama.png">
+</p>
+![Diagrama de Actividades]()
 
 ## Programación en Ladder
+
+<p align="center">
+  <img width="1399" height="750" src="https://raw.githubusercontent.com/SadPac/Parcial2/main/tablascrum.png">
+</p>
+
 # Etapa de Desarrollo e Implementación
+<p align="center">
+  <img width="1399" height="750" src="https://raw.githubusercontent.com/SadPac/Parcial2/main/tablascrum.png">
+</p>
