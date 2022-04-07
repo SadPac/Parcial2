@@ -1,8 +1,8 @@
-- [Etapa de Diseño](#etapadediseño)
-    - [Definición de Variables](#definiciondevariables)
-    - [Diagrama de Actividades](#diagramadeactividades)
-    - [Programación en Ladder](#programacionenladder)
-- [Etapa de Desarrollo e Implementación](#etapadesarrolloeimplementacion)
+- [Etapa de Diseño](#etapa diseño)
+    - [Definición de Variables](#definición de variables)
+    - [Diagrama de Actividades](#diagrama de actividades)
+    - [Programación en Ladder](#programación ladder)
+- [Etapa de Desarrollo e Implementación](#etapa desarrollo e implementación)
 
 Carlos Gutierrez
 Robinson Cely
@@ -11,7 +11,7 @@ Johan Rubio
 # Etapa de Diseño
 
 Se procedió a realizar el diseño del sistema automatizado a partir de los temas vistos
-en clase,ademas de iniciar un proceso de ideacion e identificacion sobre como abordar el problema, en primer lugar se estableció cada una de las variables necesarias, dividiendolas en tipo boleanas siendo entradas como relays internos, luego las tipos TON, Time refiriendose a contadores que se usaran en el sistema, para simular entradas de sensores, finalmente las tipo Time
+en clase,además de iniciar un proceso de ideación e identificación sobre cómo abordar el problema, en primer lugar se estableció cada una de las variables necesarias, dividiéndolas en tipo booleanas siendo entradas como relés internos, luego las tipos TON, Time refiriéndose a contadores que se usarán en el sistema, para simular entradas de sensores, finalmente las tipo Time
 
 ## Definición de Variables
 Para la realización de este sistema se establecieron las siguientes variables:
@@ -20,8 +20,8 @@ Para la realización de este sistema se establecieron las siguientes variables:
 | ----------------------------- | -------- | ---- | ---------------------------------------------------------------- |
 | START                         | INPUT    | BOOL | Botón de inicio del proceso                                      |
 | STOP                          | INPUT    | BOOL | Botón para parada del proceso                                    |
-| MOTO_BOMBA1                   | INPUT    | BOOL | Encendido y apagado de motobomba1                                |
-| MOTO_BOMBA2                   | INPUT    | BOOL | Encendido y apagado de motobomba2                                |
+| MOTOBOMBA 1                   | INPUT    | BOOL | Encendido y apagado de motobomba 1                                |
+| MOTOBOMBA 2                   | INPUT    | BOOL | Encendido y apagado de motobomba 2                                |
 | SENSOR_LLENADO_1              | INPUT    | BOOL | Sensor de llenado para el tanque 1                               |
 | SENSOR_LLENADO_2              | INPUT    | BOOL | Sensor de llenado para el tanque 2                               |
 | VALVULA_TANQUE_1              | INPUT    | BOOL | Apertura y cierre de la válvula del tanque 1                     |
@@ -51,8 +51,8 @@ Para la realización de este sistema se establecieron las siguientes variables:
 |                               |          |      |                                                                  |
 
 ## Diagrama funcional
-En el diagrama de actvidades, iniciamos identificando los procesos clave del sistema. Como el sistema es un proceso lineal repetitivo usamos la representacion de tipo funcional, de esta manera aclaramos el flujo del proceso.
-Tenemos que el proceso es inicia cuando las motobombas 1 y 2 son activadas, luego verificamos si los tanques han sido llenados, luego de estar llenos los tanques abrimos las valvulas y encendemos el sensor de nivel de nivel del tanque 3, en caso de estar lleno iniciamos la mezcladora y como paso funcional final abrimos la valvula del tanque 3.
+En el diagrama de actvidades, iniciamos identificando los procesos clave del sistema. Como el sistema es un proceso lineal repetitivo usamos la representación de tipo funcional, de esta manera aclaramos el flujo del proceso.
+Tenemos que el proceso es inicia cuando las motobombas 1 y 2 son activadas, luego verificamos si los tanques han sido llenados, luego de estar llenos los tanques abrimos las válvulas y encendemos el sensor de nivel de nivel del tanque 3, en caso de estar lleno iniciamos la mezcladora y como pasó funcional final abrimos la válvula del tanque 3.
 <p align="center">
   <img width="139" height="600" src="https://raw.githubusercontent.com/SadPac/Parcial2/main/Diagrama.png">
 </p>
@@ -67,31 +67,31 @@ Tenemos que el proceso es inicia cuando las motobombas 1 y 2 son activadas, lueg
 
 
 # Etapa de Desarrollo
-La etapa de desarrollo se dividio en 2 partes, la programacion en lenguaje Ladder tanto en Codesys como en OpenPlc
+La etapa de desarrollo se dividió en 2 partes, la programación en lenguaje Ladder tanto en Codesys como en OpenPlc
 
 ## Pasos programacion Ladder
 
-1. Inicio del sistema, verificamos si esta presionado el boton stop y si el boton start esta iniciado. La variable Continuacion_Systema se encarga de hacer reinicio de variables para volver a iniciar el proceso, esta es usada en el reinicio de sistema cuando se cuenta una ejecucion
-2. Verificamos si las bombas fueron iniciadas y comenzamos el proceso de conteo, despues de 10 segundos activamos los 2 sensores de llenado de cada uno de los tanques
-3. Verificamos si los sensores estan activados, apagamos las motobombas, luego usamos la variable "Continuacion_systema" para preparar el reinicio con conteo, finalmente encendemos las valvulas de los 2 tanques
-4. Verificamos si las valvulas fueron encendidas, y comenzamos a contar 10 segundos refiriendonos a el vaciado de los tanques, cuando pasan los 10 segundos, apagamos los sensores de llenado y cerramos las valvulas, por ultimo le decimos al sensor del tanque 3 que ya se vaciaron los tanques anteriores
-5. Verificamos si el sensor de llenado esta activo, e iniciamos la mezcladora del tanque 3, en caso de que la mezcladora este activa, se inicia el conteo de 100 segundos, despues de ese tiempo apagamos la mezcladora y utilizamos el internal relay "apagado_mezcladora" para mantener el estado
-6. Cuando se apaga la mezcladora abrimos la valvula de vaciado. En el momento de abrir la valvula de vaciado del tanque 3, esperamos 20 segundos, despues de los 20 segundos, cerramos la valvula de vaciado y apagamos el sensor de llenado, luego avisamos por medio de "IR_CONTAR" que se debe contar un ciclo
-7. Este bloque es encargado de hacer el conteo de cuantas veces se ha realizado el proceso, y en caso de que el proceso llegue a 10 veces, se para todo el proceso, Al mismo tiempo usamos el estado del boton stop para, cuando se presione, hagamos el reinicio completo del sistema
-8. Cuando verifiquemos que debemos contar, encendemos "IR_REINICIO SISTEMA" para comenzar un nuevo ciclo, sin reiniciar la cantidad de conteos que lleva el sistema
+1. Al inicio del sistema, verificamos si está presionado el botón stop y si el botón start está iniciado. La variable Continuacion Sistema se encarga de hacer reinicio de variables para volver a iniciar el proceso, esta es usada en el reinicio de sistema cuando se cuenta una ejecución
+2. Verificamos si las bombas fueron iniciadas y comenzamos el proceso de conteo, después de 10 segundos activamos los 2 sensores de llenado de cada uno de los tanques
+3. Verificamos si los sensores están activados, apagamos las motobombas, luego usamos la variable "Continuación Systema" para preparar el reinicio con conteo, finalmente encendemos las válvulas de los 2 tanques
+4. Verificamos si las válvulas fueron encendidas, y comenzamos a contar 10 segundos refiriendo a el vaciado de los tanques, cuando pasan los 10 segundos, apagamos los sensores de llenado y cerramos las válvulas, por último le decimos al sensor del tanque 3 que ya se vaciaron los tanques anteriores
+5. Verificamos si el sensor de llenado está activo, e iniciamos la mezcladora del tanque 3, en caso de que la mezcladora esté activa, se inicia el conteo de 100 segundos, después de ese tiempo apagamos la mezcladora y utilizamos el internal relay "apagado mezcladora" para mantener el estado
+6. Cuando se apaga la mezcladora abrimos la válvula de vaciado. En el momento de abrir la válvula de vaciado del tanque 3, esperamos 20 segundos, después de los 20 segundos, cerramos la válvula de vaciado y apagamos el sensor de llenado, luego avisamos por medio de "IR_ CONTAR" que se debe contar un ciclo
+7. Este bloque es encargado de hacer el conteo de cuantas veces se ha realizado el proceso, y en caso de que el proceso llegue a 10 veces, se para todo el proceso, Al mismo tiempo usamos el estado del botón stop para, cuando se presione, hagamos el reinicio completo del sistema
+8. Cuando verifiquemos que debemos contar, encendemos "IR REINICIAR SISTEMA" para comenzar un nuevo ciclo, sin reiniciar la cantidad de conteos que lleva el sistema
 
 
 ## Programación en Ladder
 
 ### Codesys
-A continuacion se adjuntan capturas de pantalla de como fue diseñado el sistema en Codesys
+A continuación se adjuntan capturas de pantalla de como fue diseñado el sistema en Codesys
 ![1](https://github.com/SadPac/Parcial2/blob/main/codesys1.jpg?raw=true)
 ![2](https://github.com/SadPac/Parcial2/blob/main/codesys2.jpg?raw=true)
 ![3](https://github.com/SadPac/Parcial2/blob/main/codesys3.jpg?raw=true)
 ![4](https://github.com/SadPac/Parcial2/blob/main/codesys4.jpg?raw=true)
 ![5](https://github.com/SadPac/Parcial2/blob/main/codesys5.jpg?raw=true)
 ### OPENPLC
-A continuacion se adjuntan capturas de pantalla de como fue diseñado el sistema en OpenPlc
+A continuación se adjuntan capturas de pantalla de como fue diseñado el sistema en Open Plc
 ![1](https://github.com/SadPac/Parcial2/blob/main/openplc1.jpg?raw=true)
 ![2](https://github.com/SadPac/Parcial2/blob/main/openplc2.jpg?raw=true)
 ![3](https://github.com/SadPac/Parcial2/blob/main/openplc3.jpg?raw=true)
@@ -105,13 +105,38 @@ En el diagrama, se simulo el llenado de los tanques por medio de cambio de color
   <img width="1399" height="750" src="https://github.com/SadPac/Parcial2/blob/main/HMI.jpg?raw=true">
 </p>
 
-## Diagrama circuito electrico
-El circuito fue diagramado por medio de TinkerCad, haciendo uso de su capacidad de replicar las conexione de una manera mas presentable y distinguible, ademas de mostrar como se veria teoricamente el montaje del sistema simulado.
+## Diagrama circuito eléctrico
+El circuito fue diagramado por medio de TinkerCad, haciendo uso de su capacidad de replicar las conexiones de una manera más presentable y distinguible, además de mostrar cómo se vería teóricamente el montaje del sistema simulado.
 <p align="center">
   <img width="1399" height="750" src="https://github.com/SadPac/Parcial2/blob/main/Diagrama%20de%20circuito.jpeg?raw=true">
 </p>
 
-# Etapa de implementacion
+# Etapa de implementación
+
+En la etapa de implementación, se decidió usar los siguientes materiales:
+
+
+| Nombre                        |
+| ----------------------------- |
+| Leds                          |
+| Resistencias                  |
+| Switches                      |
+| Arduino Uno                   |
+
+Siendo así, que el montaje físico queda de la siguiente manera:
+<p align="center">
+  <img width="1399" height="750" src="https://github.com/SadPac/Parcial2/blob/main/Circuito1.jpegraw=true">
+</p>
+
+Luego, generamos el código ejecutable ladder por medio de Open PLC de lenguaje C#, por medio de Open PLC Runtime subimos el archivo generado al localhost con el que trabaja el arduino Uno, se sube al localhost y el sistema lo interpreta y lo sube como archivo para ejecutar las órdenes por medio de arduino, este leerá y mandará las señales a la protoboard, como se muestra en la siguiente figura:
+
+<p align="center">
+  <img width="1399" height="750" src="https://github.com/SadPac/Parcial2/blob/main/Circuito1.jpegraw=true">
+</p>
+
+Ya teniendo todo montado y el sistema cargado, se procede a ejecutar el programa y evidenciar el proceso por medio de los encendidos de los LEDs. Con esto, se concluye el desarrollo de implementación.
+
+
 
 
 
