@@ -4,6 +4,9 @@
     - [Programación en Ladder](#programacionenladder)
 - [Etapa de Desarrollo e Implementación](#etapadesarrolloeimplementacion)
 
+Carlos Gutierrez
+Robinson Cely
+Johan Rubio
 
 # Etapa de Diseño
 
