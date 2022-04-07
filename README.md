@@ -1,8 +1,15 @@
-- [Etapa de Diseño](#etapadiseño)
-    - [Definición de Variables](#definiciondevariables)
-    - [Diagrama de Actividades](#diagramadeactividades)
-    - [Programación en Ladder](#programacionladder)
-- [Etapa de Desarrollo e Implementación](#etapadesarrolloeimplementacion)
+- [Etapa de Diseño](#etapa-de-diseño)
+    - [Definición de Variables](#definición-de-variables)
+    - [Diagrama Funcional](#diagrama-funcional)
+    - [Cronograma](#cronograma)
+- [Etapa de Desarrollo](#etapa-de-desarrollo)
+    - [Pasos de Programación en Ladder](#pasos-programación-ladder)
+    - [Programación en Ladder](#programación-en-ladder)
+        -[Codesys](#codesys)
+        -[OPENPLC](#openplc)
+    - [Diagrama HMI Codesys](#diagrama-hmi-codesys)
+    - [Diagrama de Circuito Eléctrico](#diagrama-circuito-eléctrico)
+- [Etapa de Implementación](#etapa-de-implementación)
 
 Carlos Gutierrez
 Robinson Cely
@@ -58,7 +65,10 @@ Tenemos que el proceso es inicia cuando las motobombas 1 y 2 son activadas, lueg
 </p>
 
 
-## Diagrama de actividades
+## Cronograma
+
+Para el cronograma se utilizó una tabla scrum, ya que permite el trabajo colaborativo entre equipos en base a objetivos propuestos, se organizo de la siguiente forma:
+
 <p align="center">
   <img width="1399" height="750" src="https://raw.githubusercontent.com/SadPac/Parcial2/main/tablascrum.png">
 </p>
@@ -69,7 +79,7 @@ Tenemos que el proceso es inicia cuando las motobombas 1 y 2 son activadas, lueg
 # Etapa de Desarrollo
 La etapa de desarrollo se dividió en 2 partes, la programación en lenguaje Ladder tanto en Codesys como en OpenPlc
 
-## Pasos programacion Ladder
+## Pasos programación Ladder
 
 1. Al inicio del sistema, verificamos si está presionado el botón stop y si el botón start está iniciado. La variable Continuacion Sistema se encarga de hacer reinicio de variables para volver a iniciar el proceso, esta es usada en el reinicio de sistema cuando se cuenta una ejecución
 2. Verificamos si las bombas fueron iniciadas y comenzamos el proceso de conteo, después de 10 segundos activamos los 2 sensores de llenado de cada uno de los tanques
