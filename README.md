@@ -1,8 +1,8 @@
 - [Etapa de Diseño](#etapadiseño)
-    - [Definición de Variables](#definición de variables)
-    - [Diagrama de Actividades](#diagrama de actividades)
-    - [Programación en Ladder](#programación ladder)
-- [Etapa de Desarrollo e Implementación](#etapa desarrollo e implementación)
+    - [Definición de Variables](#definiciondevariables)
+    - [Diagrama de Actividades](#diagramadeactividades)
+    - [Programación en Ladder](#programacionladder)
+- [Etapa de Desarrollo e Implementación](#etapadesarrolloeimplementacion)
 
 Carlos Gutierrez
 Robinson Cely
