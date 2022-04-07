@@ -11,7 +11,6 @@ Se procedió a realizar el diseño del sistema automatizado a partir de los tema
 en clase,ademas de iniciar un proceso de ideacion e identificacion sobre como abordar el problema, en primer lugar se estableció cada una de las variables necesarias, dividiendolas en tipo boleanas siendo entradas como relays internos, luego las tipos TON, Time refiriendose a contadores que se usaran en el sistema, para simular entradas de sensores, finalmente las tipo Time
 
 ## Definición de Variables
-
 Para la realización de este sistema se establecieron las siguientes variables:
 
 | Nombre                        | Atributo | Tipo | Comentario                                                       |
@@ -97,13 +96,11 @@ A continuacion se adjuntan capturas de pantalla de como fue diseñado el sistema
 
 
 ## Diagrama HMI Codesys
-![Sección Buscar usuarios y eliminar todos los registros](https://github.com/SadPac/Parcial2/blob/main/Diagrama%20de%20circuito.jpeg?raw=true)
 <p align="center">
   <img width="1399" height="750" src="https://github.com/SadPac/Parcial2/blob/main/HMI.jpg?raw=true">
 </p>
 
 ## Diagrama circuito electrico
-![Sección Buscar usuarios y eliminar todos los registros](https://github.com/SadPac/Parcial2/blob/main/Diagrama%20de%20circuito.jpeg?raw=true)
 <p align="center">
   <img width="1399" height="750" src="https://github.com/SadPac/Parcial2/blob/main/Diagrama%20de%20circuito.jpeg?raw=true">
 </p>
