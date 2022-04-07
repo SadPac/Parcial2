@@ -125,13 +125,13 @@ En la etapa de implementación, se decidió usar los siguientes materiales:
 
 Siendo así, que el montaje físico queda de la siguiente manera:
 <p align="center">
-  <img width="1399" height="750" src="https://github.com/SadPac/Parcial2/blob/main/Circuito1.jpegraw=true">
+  <img width="1399" height="750" src="https://github.com/SadPac/Parcial2/blob/main/Circuito1.jpeg?raw=true">
 </p>
 
 Luego, generamos el código ejecutable ladder por medio de Open PLC de lenguaje C#, por medio de Open PLC Runtime subimos el archivo generado al localhost con el que trabaja el arduino Uno, se sube al localhost y el sistema lo interpreta y lo sube como archivo para ejecutar las órdenes por medio de arduino, este leerá y mandará las señales a la protoboard, como se muestra en la siguiente figura:
 
 <p align="center">
-  <img width="1399" height="750" src="https://github.com/SadPac/Parcial2/blob/main/Circuito1.jpegraw=true">
+  <img width="1399" height="750" src="https://github.com/SadPac/Parcial2/blob/main/Circuito1.jpeg?raw=true">
 </p>
 
 Ya teniendo todo montado y el sistema cargado, se procede a ejecutar el programa y evidenciar el proceso por medio de los encendidos de los LEDs. Con esto, se concluye el desarrollo de implementación.
