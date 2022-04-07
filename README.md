@@ -47,7 +47,7 @@ Para la realización de este sistema se establecieron las siguientes variables:
 | CONTADOR_VECES_SISTEMA        | INPUT    | CTU  | Contador para la cantidad de veces que se repite el proceso      |
 |                               |          |      |                                                                  |
 
-## Diagrama de Actividades
+## Diagrama funcional
 En el diagrama de actvidades, iniciamos identificando los procesos clave del sistema. Como el sistema es un proceso lineal repetitivo usamos la representacion de tipo funcional, de esta manera aclaramos el flujo del proceso.
 Tenemos que el proceso es inicia cuando las motobombas 1 y 2 son activadas, luego verificamos si los tanques han sido llenados, luego de estar llenos los tanques abrimos las valvulas y encendemos el sensor de nivel de nivel del tanque 3, en caso de estar lleno iniciamos la mezcladora y como paso funcional final abrimos la valvula del tanque 3.
 <p align="center">
@@ -55,15 +55,16 @@ Tenemos que el proceso es inicia cuando las motobombas 1 y 2 son activadas, lueg
 </p>
 
 
-
-
-
-
-
-# Etapa de Desarrollo e Implementación
+## Diagrama de actividades
 <p align="center">
   <img width="1399" height="750" src="https://raw.githubusercontent.com/SadPac/Parcial2/main/tablascrum.png">
 </p>
+
+
+
+
+# Etapa de Desarrollo
+La etapa de desarrollo se dividio en 2 partes, la programacion en lenguaje Ladder tanto en Codesys como en OpenPlc
 
 ## Pasos programacion Ladder
 
@@ -96,14 +97,18 @@ A continuacion se adjuntan capturas de pantalla de como fue diseñado el sistema
 
 
 ## Diagrama HMI Codesys
+En el diagrama, se simulo el llenado de los tanques por medio de cambio de color de las tuberias, ademas de mostrar por medio de leds, los diferentes estados tanto de los sensores como de los actuadores, es decir cuando el sensor de nivel de algun tanque fue activado, se ecendera su correspondiente led, ademas, se implementaron 3 botones, uno para inicio del proceso, otro para la pausa momentanea y otro del reinicio total del sistema.
 <p align="center">
   <img width="1399" height="750" src="https://github.com/SadPac/Parcial2/blob/main/HMI.jpg?raw=true">
 </p>
 
 ## Diagrama circuito electrico
+El circuito fue diagramado por medio de TinkerCad, haciendo uso de su capacidad de replicar las conexione de una manera mas presentable y distinguible, ademas de mostrar como se veria teoricamente el montaje del sistema simulado.
 <p align="center">
   <img width="1399" height="750" src="https://github.com/SadPac/Parcial2/blob/main/Diagrama%20de%20circuito.jpeg?raw=true">
 </p>
+
+# Etapa de implementacion
 
 
 
