@@ -1,4 +1,4 @@
-- [Etapa de Diseño](#etapa diseño)
+- [Etapa de Diseño](#etapadiseño)
     - [Definición de Variables](#definición de variables)
     - [Diagrama de Actividades](#diagrama de actividades)
     - [Programación en Ladder](#programación ladder)
